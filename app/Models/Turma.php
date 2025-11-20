@@ -16,7 +16,6 @@ class Turma extends Model
     protected $fillable = [
         'name',
         'course_id',
-        'user_id',
         'active',
     ];
 
@@ -33,14 +32,6 @@ class Turma extends Model
     public function course(): BelongsTo
     {
         return $this->belongsTo(Course::class);
-    }
-
-    /**
-     * Get the coordenador responsible for this turma.
-     */
-    public function coordenador(): BelongsTo
-    {
-        return $this->belongsTo(User::class, 'user_id');
     }
 
     /**

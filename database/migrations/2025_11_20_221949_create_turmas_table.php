@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('name'); // Ex: "2025.1"
             $table->foreignId('course_id')->constrained()->cascadeOnDelete();
-            $table->foreignId('user_id')->constrained()->cascadeOnDelete(); // Coordenador
             $table->boolean('active')->default(true);
             $table->timestamps();
         });

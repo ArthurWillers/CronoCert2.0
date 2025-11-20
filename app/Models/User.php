@@ -6,6 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Str;
@@ -90,11 +91,11 @@ class User extends Authenticatable
     }
 
     /**
-     * Get the turmas where this user is coordenador.
+     * Get the course where this user is coordenador.
      */
-    public function coordenadorTurmas(): HasMany
+    public function coordenadorCourse(): HasOne
     {
-        return $this->hasMany(Turma::class);
+        return $this->hasOne(Course::class);
     }
 
     /**
