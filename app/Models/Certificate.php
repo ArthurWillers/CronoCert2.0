@@ -15,6 +15,7 @@ class Certificate extends Model
         'file_path',
         'description',
         'hours',
+        'related_to_course',
         'status',
         'rejection_reason',
         'user_id',

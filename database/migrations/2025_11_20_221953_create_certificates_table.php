@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('file_path');
             $table->text('description');
             $table->float('hours')->nullable(); // Definido pelo coordenador
+            $table->boolean('related_to_course')->default(false); // Se é relacionado à área do curso
             $table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
             $table->text('rejection_reason')->nullable();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete(); // Aluno
