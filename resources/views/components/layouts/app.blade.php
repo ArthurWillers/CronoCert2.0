@@ -1,3 +1,12 @@
+@php
+    $dashboardRoute = match(auth()->user()->role) {
+        'admin' => 'admin.dashboard',
+        'coordenador' => 'coordenador.dashboard',
+        'aluno' => 'aluno.dashboard',
+        default => 'welcome',
+    };
+@endphp
+
 <x-layouts.base>
 
     <div x-data="{ open: false }">
@@ -5,7 +14,7 @@
             class="fixed top-0 left-0 h-screen w-64 border-e bg-neutral-100 border-neutral-300 p-4 flex flex-col gap-4 z-40 transition-transform duration-300 ease-in-out lg:translate-x-0"
             :class="{ '-translate-x-full': !open }" x-cloak>
             <div class="flex items-center">
-                <a href="{{ route('dashboard') }}" class="">
+                <a href="{{ route($dashboardRoute) }}" class="">
                     <x-app-logo />
                 </a>
 
@@ -17,9 +26,9 @@
 
 
             <nav class="flex flex-col overflow-visible min-h-auto space-y-0.5">
-                <x-nav-link :href="route('dashboard')" :current="request()->routeIs('dashboard')">
+                <x-nav-link :href="route($dashboardRoute)" :current="request()->routeIs($dashboardRoute)">
                     <x-icon name="home" class="size-4" />
-                    dashboard
+                    Dashboard
                 </x-nav-link>
 
             </nav>
