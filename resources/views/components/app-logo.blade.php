@@ -1,6 +1,8 @@
 <div class="flex items-center">
-    <div class="flex aspect-square size-9 items-center justify-center rounded-md bg-neutral-800">
-        <x-app-logo-icon class="size-7 text-white" />
+    <div class="flex aspect-square size-9 p-1 items-center justify-center rounded-md bg-neutral-800">
+        <x-app-logo-icon/>
     </div>
-    <span class="ms-1 pb-2 truncate text-2xl">ChronoCert</span>
+    <div class="ms-1 grid flex-1 text-start text-lg">
+        <span class="ms-1 truncate leading-tight font-semibold">ChronoCert</span>
+    </div>
 </div>
